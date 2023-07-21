@@ -1,0 +1,501 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  --size-1: calc(1 * 0.25rem);
+  --size-2: calc(2 * 0.25rem);
+  --size-3: calc(3 * 0.25rem);
+  --size-4: calc(4 * 0.25rem);
+  --size-5: calc(5 * 0.25rem);
+  --size-6: calc(6 * 0.25rem);
+  --size-7: calc(7 * 0.25rem);
+  --size-8: calc(8 * 0.25rem);
+  --size-9: calc(9 * 0.25rem);
+  --size-10: calc(10 * 0.25rem);
+  --size-11: calc(11 * 0.25rem);
+  --size-12: calc(12 * 0.25rem);
+  --size-13: calc(13 * 0.25rem);
+  --size-14: calc(14 * 0.25rem);
+  --size-15: calc(15 * 0.25rem);
+  --size-16: calc(16 * 0.25rem);
+  --size-17: calc(17 * 0.25rem);
+  --size-18: calc(18 * 0.25rem);
+  --size-19: calc(19 * 0.25rem);
+  --size-20: calc(20 * 0.25rem);
+  --size-21: calc(21 * 0.25rem);
+  --size-22: calc(22 * 0.25rem);
+  --size-23: calc(23 * 0.25rem);
+  --size-24: calc(24 * 0.25rem);
+  --size-25: calc(25 * 0.25rem);
+  --size-26: calc(26 * 0.25rem);
+  --size-27: calc(27 * 0.25rem);
+  --size-28: calc(28 * 0.25rem);
+  --size-29: calc(29 * 0.25rem);
+  --size-30: calc(30 * 0.25rem);
+}
+
+.container {
+  width: min(100% - 3.5rem, 1280px);
+  margin-inline: auto;
+}
+
+.flex-flow {
+  display: flex;
+  flex-direction: column;
+}
+
+.cta__form {
+  display: grid;
+  gap: var(--size-4);
+  font-family: "Raleway", sans-serif;
+  margin-block: var(--size-2);
+}
+.cta__form_email {
+  display: grid;
+  text-align: start;
+  position: relative;
+}
+.cta__form_email [name=cta__email] {
+  padding: var(--size-3) var(--size-4);
+  border: 1px solid hsl(243, 87%, 12%);
+  border-radius: var(--size-1);
+  outline: none;
+}
+.cta__form_email [name=cta__email]::placeholder {
+  color: #bfbfbf;
+}
+.cta__form_email_validate {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  scale: 0;
+  opacity: 0;
+  margin-top: var(--size-1);
+  font-size: var(--size-3);
+  user-select: none;
+  cursor: not-allowed;
+}
+.cta__form_submit {
+  cursor: pointer;
+  padding: var(--size-3);
+  border: transparent;
+  border-radius: var(--size-1);
+  font-weight: 700;
+  color: #f9f8fe;
+  background-color: hsl(224, 93%, 58%);
+  box-shadow: var(--size-1) var(--size-1) var(--size-1) hsla(224, 93%, 58%, 0.7);
+}
+.cta__form_submit:hover {
+  background-color: hsla(224, 93%, 58%, 0.85);
+}
+.cta__form.invalid .cta__form_email [name=cta__email] {
+  border: 1px solid hsl(0, 97%, 64%);
+}
+.cta__form.invalid .cta__form_email [name=cta__email]::placeholder {
+  color: #bfbfbf;
+}
+.cta__form.invalid .cta__form_email_validate {
+  display: inline;
+  opacity: 1;
+  scale: 1;
+}
+@media (width > 800px) {
+  .cta__form--hero {
+    grid-template-columns: 1fr 0.5fr;
+  }
+}
+.cta__form--hero .cta__form_email_validate {
+  color: hsl(0, 97%, 64%);
+}
+
+.mobile-grid-first {
+  grid-row: 1/span 1;
+}
+@media (width > 800px) {
+  .mobile-grid-first {
+    grid-column: 2/span 1;
+  }
+}
+
+body {
+  --header-height: 10rem;
+  min-height: 100dvh;
+  background-color: #fff;
+  font-family: "Open Sans", sans-serif;
+  color: hsl(238, 22%, 44%);
+}
+
+.header {
+  max-height: var(--header-height);
+}
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: var(--size-8);
+}
+.header__logo {
+  max-width: 100px;
+}
+@media (width > 800px) {
+  .header__logo {
+    max-width: 100%;
+  }
+}
+
+.nav {
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(var(--size-3), 2vw, var(--size-5));
+  color: hsl(243, 87%, 12%);
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--size-5);
+  list-style-type: none;
+  padding-left: 0;
+}
+@media (width > 800px) {
+  .nav__list {
+    gap: var(--size-7);
+  }
+}
+.nav__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  --grid-gap:var(--size-20);
+}
+
+.hero {
+  color: hsl(243, 87%, 12%);
+}
+.hero__wrapper {
+  display: grid;
+  gap: var(--grid-gap);
+  align-items: center;
+  margin-block: var(--size-16);
+}
+@media (width > 800px) {
+  .hero__wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--size-6);
+  text-align: center;
+  margin-inline: auto;
+  max-width: 500px;
+}
+@media (width > 800px) {
+  .hero__content {
+    text-align: start;
+    margin-inline: 0;
+  }
+}
+.hero__heading {
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(var(--size-6), 3vw, var(--size-8));
+}
+.hero__subheading {
+  font-size: 14px;
+}
+@media (width > 800px) {
+  .hero__subheading {
+    font-size: var(--size-4);
+  }
+}
+
+.desc {
+  background-color: #f9f8fe;
+  margin-top: calc(var(--size-30));
+}
+.desc::before {
+  content: "";
+  display: block;
+  background-image: url("./images/bg-curve-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  margin-top: calc(-1 * var(--size-15));
+  padding-block: var(--size-15);
+}
+@media (width > 800px) {
+  .desc::before {
+    margin-top: -100px;
+    min-height: 100px;
+    background-image: url("./images/bg-curve-desktop.svg");
+  }
+}
+.desc__wrapper {
+  display: grid;
+  gap: var(--grid-gap);
+  align-items: center;
+  margin-block: var(--size-8) var(--size-16);
+}
+@media (width > 800px) {
+  .desc__wrapper {
+    grid-template-columns: 1fr 1fr;
+    margin-inline: 0;
+  }
+}
+.desc__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--size-6);
+  margin-inline: auto;
+  max-width: 500px;
+  font-size: 14px;
+  color: hsl(243, 87%, 12%);
+}
+@media (width > 800px) {
+  .desc__content {
+    margin-inline: 0;
+  }
+}
+.desc__heading {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  font-size: clamp(18px, 3vw, var(--size-7));
+}
+@media (width > 800px) {
+  .desc__heading {
+    text-align: start;
+  }
+}
+.desc__text p:last-child {
+  margin-top: var(--size-4);
+}
+.desc__working {
+  display: flex;
+  justify-content: center;
+}
+@media (width > 800px) {
+  .desc__working {
+    justify-content: flex-start;
+  }
+}
+.desc__working_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1ch;
+  color: hsl(170, 45%, 43%);
+  text-decoration: none;
+  padding-bottom: var(--size-2);
+  border-bottom: 2px solid hsl(170, 45%, 43%);
+}
+.desc__working_link span:last-child {
+  font-size: 1rem;
+}
+.desc__working_link:hover {
+  opacity: 0.5;
+}
+.desc .testimonial {
+  display: grid;
+  gap: 1rem;
+  padding: var(--size-7);
+  padding-right: var(--size-2);
+  width: min(100%, 350px);
+  margin-inline: auto;
+  border-radius: var(--size-1);
+  font-size: 12px;
+  color: hsl(243, 87%, 12%);
+  background-color: #fff;
+  box-shadow: 0 0 1rem 0 hsla(0, 0%, 0%, 0.15);
+}
+@media (width > 800px) {
+  .desc .testimonial {
+    margin-inline: 0;
+    padding-right: var(--size-7);
+  }
+}
+.desc .testimonial__testimony::before {
+  display: block;
+  content: url("./images/icon-quotes.svg");
+}
+.desc .testimonial__author {
+  display: flex;
+  gap: var(--size-2);
+}
+.desc .testimonial__avatar {
+  width: var(--size-9);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.desc .testimonial__name {
+  font-weight: 700;
+}
+.desc .testimonial__position {
+  font-size: 10px;
+}
+
+.cta {
+  background-color: hsl(238, 22%, 44%);
+  color: #bfbfbf;
+  text-align: center;
+}
+.cta__wrapper {
+  display: grid;
+  justify-items: center;
+  gap: var(--size-4);
+  margin-inline: auto;
+  margin-block: var(--size-16);
+}
+@media (width > 800px) {
+  .cta__wrapper {
+    justify-items: start;
+    gap: var(--grid-gap);
+    grid-template-columns: 1fr 1fr;
+    margin-block: var(--size-24);
+  }
+}
+.cta__content {
+  display: grid;
+  gap: var(--size-4);
+  max-width: 60ch;
+}
+@media (width > 800px) {
+  .cta__content {
+    text-align: start;
+  }
+}
+.cta__heading {
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(18px, 3vw, var(--size-8));
+  color: #f9f8fe;
+}
+.cta__form--cta {
+  font-size: 12px;
+  width: 80%;
+}
+@media (width > 800px) {
+  .cta__form--cta {
+    width: 100%;
+  }
+}
+.cta__form--cta [name=cta__email] {
+  padding: var(--size-2);
+  border: none;
+  box-shadow: 0 0 var(--size-1) 0 hsla(0, 0%, 0%, 0.4);
+}
+@media (width > 800px) {
+  .cta__form--cta [name=cta__email] {
+    padding: var(--size-2) var(--size-5);
+  }
+}
+.cta__form--cta .cta__form_email_validate {
+  color: #bfbfbf;
+  margin: 0;
+  font-size: 10px;
+}
+.cta__form--cta .cta__form_submit {
+  padding: var(--size-2);
+  box-shadow: 0 0 var(--size-1) 0 hsla(0, 0%, 0%, 0.4);
+}
+@media (width > 800px) {
+  .cta__form--cta .cta__form_submit {
+    width: 200px;
+  }
+}
+
+.footer {
+  background-color: hsl(243, 87%, 12%);
+  color: #f9f8fe;
+}
+.footer__wrapper {
+  margin-block: var(--size-16);
+  display: grid;
+  gap: var(--size-16);
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-16);
+}
+.footer__links a {
+  text-decoration: none;
+  color: #f9f8fe;
+}
+@media (width > 800px) {
+  .footer__links {
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+  }
+}
+.footer__contacts, .footer__about, .footer__terms {
+  display: grid;
+  gap: var(--size-6);
+}
+.footer__contacts > *, .footer__about > *, .footer__terms > * {
+  width: fit-content;
+}
+.footer__contact {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--size-4);
+}
+.footer__contact address {
+  font-style: normal;
+}
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: var(--size-4);
+  font-size: var(--size-4);
+}
+.footer__socials a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f9f8fe;
+  padding: var(--size-3);
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+@media (width > 800px) {
+  .footer__socials a {
+    flex: 1 1 auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
